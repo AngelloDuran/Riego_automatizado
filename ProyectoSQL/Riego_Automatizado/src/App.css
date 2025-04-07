@@ -1,42 +1,127 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+
+body {
+  font-family: 'Arial Black', sans-serif;
+  /*background-image: url(./img/img5.gif);*/
+  background-color: #0B2B26;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;   /* Centra horizontalmente */
+  align-items: center;       /* Centra verticalmente */
+  min-height: 100vh;         /* Ocupa toda la altura de la pantalla */
+  box-sizing: border-box;
+}
+
+
+h1 {
+  color: white;
+  color: #ffffff;
+}
+.contenido {
+  display: flexbox;
+  padding: 0.1rem 2rem;
+  background-color: #051f20;
+  color: rgb(250, 243, 243);
+  border-radius: 2.7rem;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  color: white;  /* Asegura que el texto sea visible sobre el fondo */
+  padding: px;
+}
+/*sub menu*/
+.card {
+  gap: 30px;
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.315);
+  border-radius: 3rem;
+  padding: 3rem;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+/*boton*/
+.custom-button {
+  padding: 0.10rem 2rem;
+  background-color: #124f52;
+  color: rgb(255, 255, 255);
+  border-radius: 0.7rem;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.1s ease, box-shadow 0.3s ease;
+  
+}
+.custom-button:hover {
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);  /* Sombra más grande y difusa */
+  transform: translateY(-3px);  /* Mueve el botón hacia arriba ligeramente */
+
+}
+
+
+.alert {
+  background-color: #000000;
+  color: #000000;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.chart-container {
+  margin-top: 15px;
+  background-color: #ff0000;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.096);
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 8px;
+  }
+
+  .button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+/*fondo2*/
+.main-container {
+  border-radius: 2.7rem;
+  padding: 1.5rem;
+  background-color: #163832;
+  min-height: 100vh;
+  width: 100%; /* 👈 Asegura que ocupe todo el ancho */
+  box-sizing: border-box; /* 👈 Evita que el padding cause overflow */
+}
+.main-title {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive */
+  gap: 1rem;
+  width: 100%; /* 👈 Que ocupe todo */
+  max-width: 1200px; /* opcional para limitar en pantallas grandes */
+  margin: 0 auto; /* 👈 Esto lo centra */
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center; /* Centra los botones */
 }

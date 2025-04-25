@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // 👈 IMPORTACIÓN NECESARIA
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -22,6 +23,7 @@ const CultivoCard = ({ nombre, estado, notificacion }) => (
 );
 
 const Soporte = () => {
+  const navigate = useNavigate(); // 👈 Hook para navegación
   const [cultivos, setCultivos] = useState([
     { nombre: 'Tomates', estado: 'Óptimo', notificacion: '......' },
     { nombre: 'Lechugas', estado: 'Necesita Agua', notificacion: 'Bajo nivel de humedad' },
@@ -37,12 +39,20 @@ const Soporte = () => {
 
   return (
     <Container className="main-container py-4">
-      <h1 className="main-title text-center mb-4">Servicios de Cultivo</h1>
+      <h1 className="main-title text-center mb-4">Soporte</h1>
       <Row className="g-3">
         {cultivos.map((cultivo, index) => (
           <CultivoCard key={index} {...cultivo} />
         ))}
       </Row>
+
+      {/* Botón para volver al inicio */}
+      <div className="text-center mt-4">
+  <button className="btn btn-volver" onClick={() => navigate('/')}>
+    Volver al Inicio
+  </button>
+</div>
+
     </Container>
   );
 };

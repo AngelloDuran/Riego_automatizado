@@ -136,4 +136,45 @@ h1 {
   margin-bottom: 2rem;
   justify-content: center; /* Centra los botones */
 }
+.btn-green-light {
+  background-color: #84db8d;
+  color: white;
+}
+
+.btn-green-medium {
+  background-color: #1ea767; /* Bootstrap Success */
+  color: white;
+}
+
+.btn-green-dark {
+  background-color: #196338;
+  color: white;
+}
+.btn-green-strong {
+  background-color: #1b8d47; /* Verde fuerte */
+  color: white;
+}
+/* Estilo personalizado para el botón */
+.btn-volver {
+  background-color: #257c39; /* Color verde */
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 50px; /* <<< AQUÍ agregamos separación hacia abajo */
+}
+
+.btn-volver:hover {
+  background-color: #32a755; /* Color verde más oscuro */
+  transform: scale(1.05); /* Efecto de escala */
+}
+
+.btn-volver:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(135, 248, 29, 0.5);
+}
+
 

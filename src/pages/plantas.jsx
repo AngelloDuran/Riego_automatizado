@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -22,6 +23,7 @@ const CultivoCard = ({ nombre, estado, notificacion }) => (
 );
 
 const Plantas = () => {
+  const navigate = useNavigate(); // 👈 para usar el botón
   const [cultivos, setCultivos] = useState([
     { nombre: 'Tomates', estado: 'Óptimo', notificacion: '......' },
     { nombre: 'Lechugas', estado: 'Necesita Agua', notificacion: 'Bajo nivel de humedad' },
@@ -43,9 +45,16 @@ const Plantas = () => {
           <CultivoCard key={index} {...cultivo} />
         ))}
       </Row>
-    </Container>
+{/* Botón para volver al inicio */}
+      <div className="text-center mt-4">
+  <button className="btn btn-volver" onClick={() => navigate('/')}>
+    Volver al Inicio
+  </button>
+</div>
+
+         </Container>
+    
   );
 };
 
 export default Plantas;
-  

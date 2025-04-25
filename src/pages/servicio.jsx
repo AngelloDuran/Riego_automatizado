@@ -46,12 +46,12 @@ const Servicios = () => {
         ))}
       </Row>
 
+      {/* Botón para volver al inicio */}
       <div className="text-center mt-4">
-  <button className="btn btn-volver" onClick={() => navigate('/')}>
-    Volver al Inicio
-  </button>
-</div>
-  </Container>
+      <button className="btn-volver" onClick={() => navigate('/')}>          Volver al Inicio
+        </button>
+      </div>
+    </Container>
   );
 };
 

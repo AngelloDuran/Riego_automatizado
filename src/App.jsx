@@ -1,9 +1,7 @@
 import fondo from './img/img6.jpeg';
 
-
-import './App.css';  // Asegúrate de tener este import
-
 import React, { useState } from 'react';
+
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Formulario from './Formulario/formulario';
 import Plantas from './pages/plantas';
@@ -13,7 +11,6 @@ import Soporte from './pages/soporte';
 import {
   BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, ResponsiveContainer,
 } from 'recharts';
-
 
 const barData = [
   { name: 'Humedad', value: 65 },
@@ -102,8 +99,6 @@ const Dashboard = ({ nombre }) => {
                   </div>
                 </div>
                 {/* FIN GRÁFICAS */}
-                
-                
 
               </div>
             </div>

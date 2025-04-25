@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // 👈 IMPORTACIÓN NECESARIA
+import { useNavigate } from 'react-router-dom'; 
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -39,7 +39,7 @@ const Soporte = () => {
 
   return (
     <Container className="main-container py-4">
-      <h1 className="main-title text-center mb-4">Soporte</h1>
+      <h1 className="main-title text-center mb-4">Servicios de Cultivo</h1>
       <Row className="g-3">
         {cultivos.map((cultivo, index) => (
           <CultivoCard key={index} {...cultivo} />
@@ -48,11 +48,10 @@ const Soporte = () => {
 
       {/* Botón para volver al inicio */}
       <div className="text-center mt-4">
-  <button className="btn btn-volver" onClick={() => navigate('/')}>
-    Volver al Inicio
-  </button>
-</div>
-
+      <button className="btn-volver" onClick={() => navigate('/')}>
+          Volver al Inicio
+        </button>
+      </div>
     </Container>
   );
 };

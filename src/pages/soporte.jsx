@@ -1,57 +1,64 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-const CultivoCard = ({ nombre, estado, notificacion }) => (
-  <Col xs={12} md={6} lg={4} className="mb-3">
-    <Card className="shadow-lg h-100">
-      <Card.Body>
-        <Card.Title as="h5">{nombre}</Card.Title>
-        <Card.Text>Estado: {estado}</Card.Text>
-        {notificacion && (
-          <div className="d-flex align-items-center mt-2 text-danger">
-            <span className="me-2">⚠️</span>
-            {notificacion}
-          </div>
-        )}
-      </Card.Body>
-    </Card>
-  </Col>
-);
+import Card from 'react-bootstrap/Card';
 
 const Soporte = () => {
-  const navigate = useNavigate(); // 👈 Hook para navegación
-  const [cultivos, setCultivos] = useState([
-    { nombre: 'Tomates', estado: 'Óptimo', notificacion: '......' },
-    { nombre: 'Lechugas', estado: 'Necesita Agua', notificacion: 'Bajo nivel de humedad' },
-    { nombre: 'Calabazas', estado: 'Infectado', notificacion: 'Posible plaga detectada' }
-  ]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      console.log('Revisando el estado de los cultivos...');
-    }, 10000);
-    return () => clearInterval(interval);
-  }, []);
+  const navigate = useNavigate();
 
   return (
-    <Container className="main-container py-4">
-      <h1 className="main-title text-center mb-4">Servicios de Cultivo</h1>
-      <Row className="g-3">
-        {cultivos.map((cultivo, index) => (
-          <CultivoCard key={index} {...cultivo} />
-        ))}
-      </Row>
+    <Container className="main-container py-4 text-white">
+      <h1 className="text-center mb-4">Soporte</h1>
 
       {/* Botón para volver al inicio */}
       <div className="text-center mt-4">
-      <button className="btn-volver" onClick={() => navigate('/')}>
+        <button className="btn btn-volver" onClick={() => navigate('/')}>
           Volver al Inicio
         </button>
       </div>
+
+      {/* Servicios ofrecidos */}
+      <section className="servicios-ofrecidos mt-5">
+        <h2 className="text-center mb-3">Informacion de Contactos</h2>
+        <Row className="justify-content-center g-4">
+          <Col xs={12} md={6} lg={4}>
+            <Card className="h-100 shadow bg-transparent border-light text-white text-center">
+              <Card.Body>
+                <i className="bi bi-wrench display-4 mb-3"></i>
+                <Card.Title>Teléfonos:</Card.Title>
+                <p>+ 52 (55) 80262733</p>
+                <p>+ 52 (55) 51493022</p>
+                <p>+ 52 (22) 02323158</p>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          <Col xs={12} md={6} lg={4}>
+            <Card className="h-100 shadow bg-transparent border-light text-white text-center">
+              <Card.Body>
+                <i className="bi bi-shield-check display-4 mb-3"></i>
+                <Card.Title>Correos Electrónicos:</Card.Title>
+                <p>soporte@cultivos.com</p>
+                <p>atencion@cultivos.com</p>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          <Col xs={12} md={6} lg={4}>
+            <Card className="h-100 shadow bg-transparent border-light text-white text-center">
+              <Card.Body>
+                <i className="bi bi-chat-dots display-4 mb-3"></i>
+                <Card.Title>Horario de Atención:</Card.Title>
+                <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                <p>Sábado: 10:00 AM - 2:00 PM</p>
+                <p>Domingo: Cerrado</p>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </section>
     </Container>
   );
 };

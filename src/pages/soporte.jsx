@@ -14,8 +14,8 @@ const Soporte = () => {
 
       {/* Botón para volver al inicio */}
       <div className="text-center mt-4">
-        <button className="btn btn-volver" onClick={() => navigate('/')}>
-          Volver al Inicio
+        <button className="btn btn-volver" onClick={() => navigate('/dashboard')}>
+          Volver al menu
         </button>
       </div>
 

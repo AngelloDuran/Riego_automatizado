@@ -137,14 +137,11 @@ h1 {
   justify-content: center; /* Centra los botones */
 }
 .btn-green-light {
-  background-color: #84db8d;
+  background-color: #40b44c;
   color: white;
 }
 
-.btn-green-medium {
-  background-color: #1ea767; /* Bootstrap Success */
-  color: white;
-}
+
 
 .btn-green-dark {
   background-color: #196338;
